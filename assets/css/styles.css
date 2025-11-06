@@ -1,0 +1,119 @@
+/*
+  Carson Bowers Racing — styles.css
+  - Mobile-first, responsive CSS with CSS variables for easy theming
+  - Clean, legible type; generous spacing; accessible contrast
+  - Commented to explain layout decisions and tricky parts
+*/
+
+:root {
+  --bg: #0c0d10;          /* near-black background for depth */
+  --bg-alt: #12141a;      /* section alternation */
+  --card: #181b22;        /* cards/panels */
+  --text: #e9edf1;        /* primary text color */
+  --muted: #a8b0bb;       /* secondary text */
+  --accent: #ff3d3d;      /* racing red accent */
+  --accent-ghost: rgba(255, 61, 61, 0.18);
+  --border: #262a33;      /* soft borders */
+  --shadow: rgba(0,0,0,0.4);
+
+  --radius: 14px;
+  --radius-lg: 18px;
+  --container: 1100px;    /* max content width */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, Noto Sans, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+
+img { max-width: 100%; display: block; }
+a { color: var(--text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+.section { padding: 4rem 0; }
+.section.alt { background: var(--bg-alt); }
+.center { text-align: center; }
+.gap { margin-top: 1.25rem; }
+.muted { color: var(--muted); }
+.accent { color: var(--accent); }
+
+/* Header / Nav */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(12,13,16,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: 0.2px; }
+.brand-mark { width: 28px; height: 28px; border-radius: 6px; }
+.brand-name { font-size: 1rem; }
+
+.nav-toggle { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 8px; display: inline-flex; align-items: center; gap: .5rem; }
+.site-nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+.site-nav a { display: inline-block; padding: .4rem .6rem; border-radius: 8px; }
+.site-nav a:hover, .site-nav .active a { background: var(--accent-ghost); }
+
+/* Mobile nav behaviour: enhanced via JS to toggle .open */
+@media (max-width: 820px) {
+  .site-nav { position: absolute; top: 64px; right: 0; background: var(--bg-alt); border-left: 1px solid var(--border); border-bottom: 1px solid var(--border); border-radius: 0 0 0 var(--radius); display: none; }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; padding: .6rem; }
+}
+
+/* Hero */
+.hero { position: relative; min-height: 70vh; display: grid; place-items: center; text-align: center; }
+.hero-media { position: absolute; inset: 0; background: url('../img/hero.jpg') center/cover no-repeat fixed; filter: brightness(0.45) saturate(1.1); }
+.hero-content { position: relative; padding: 4rem 0; max-width: 800px; }
+.hero h1 { font-size: clamp(2rem, 6vw, 4rem); line-height: 1.1; margin: 0 0 0.5rem; }
+.hero p { color: var(--muted); margin: 0 auto 1.25rem; }
+.hero-cta { display: inline-flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+
+/* Buttons */
+.btn { display: inline-block; border: 1px solid var(--border); padding: .7rem 1rem; border-radius: 999px; font-weight: 600; transition: transform .08s ease, background .2s ease; }
+.btn:hover { transform: translateY(-1px); text-decoration: none; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: white; }
+.btn.ghost { background: transparent; }
+
+/* Grid helpers */
+.grid { display: grid; gap: 1.25rem; }
+.grid.two { grid-template-columns: 1fr; }
+.grid.three { grid-template-columns: 1fr; }
+
+@media (min-width: 820px) {
+  .grid.two { grid-template-columns: 1.1fr .9fr; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Cards / Figures */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; box-shadow: 0 8px 28px var(--shadow); }
+.card.photo img { border-radius: var(--radius-lg); }
+.card .muted { font-size: 0.95rem; }
+
+/* Results grid spacing */
+.results-grid .card { min-height: 160px; }
+
+/* List with check marks */
+.ticks { list-style: none; padding: 0; margin: 1rem 0; }
+.ticks li { position: relative; padding-left: 1.5rem; margin-bottom: .5rem; }
+.ticks li::before { content: '✔'; position: absolute; left: 0; top: 0; color: var(--accent); }
+
+/* Partners logo grid */
+.logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; align-items: center; }
+.logo-grid img { max-height: 54px; object-fit: contain; filter: saturate(0.9) contrast(1.05); opacity: 0.95; }
+@media (min-width: 640px) { .logo-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .logo-grid { grid-template-columns: repeat(6, 1fr); } }
+
+/* Forms */
+.form label { display: block; margin-bottom: .75rem; }
+.form span { display: block; font-size: .9rem; color: var(--muted); margin-bottom: .35rem; }
+.form input, .form textarea { width: 100%; background: #0f1218; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: .7rem .8rem; }
+.form button { margin-top: .4rem; }
+
+/* Table styles for schedule */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+.schedule-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.schedule-table th, .schedule-table td { padding: .9rem .8rem; border-bottom: 1px solid var(--border); text-align: left; }
+.schedule-table thead th { background: #10131a; position: sticky; top: 64px; z-index: 1; }
+.schedule-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); background: #0b0c0f; padding: 1.2rem 0; }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+.footer-inner nav { display: inline-flex; gap: .9rem; }
+.footer-inner a { color: var(--muted); }
