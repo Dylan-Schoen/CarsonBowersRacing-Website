@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule — Carson Bowers Racing</title>
+  <meta name="description" content="Race schedule for Carson Bowers Racing." />
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="assets/img/favicon.png" alt="CB" class="brand-mark" />
+        <span class="brand-name">Carson Bowers Racing</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li class="active"><a href="schedule.html">Schedule</a></li>
+          <li><a href="index.html#results">Results</a></li>
+          <li><a href="index.html#partners">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Race Schedule</h1>
+      <p class="muted">Dates and venues are subject to change. Tap any row for track links if provided.</p>
+
+      <!--
+        This table is simple HTML for universal compatibility.
+        If you prefer to drive it from JSON later, you can replace the tbody with JS-rendered rows.
+      -->
+      <div class="table-wrap">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Event</th>
+              <th>Track</th>
+              <th>City</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mar 8, 2026</td>
+              <td>Season Opener</td>
+              <td><a href="#" target="_blank" rel="noopener">Midwest Short Track</a></td>
+              <td>Springfield, IL</td>
+              <td>Feature + Heat</td>
+            </tr>
+            <tr>
+              <td>Apr 12, 2026</td>
+              <td>State Speedway Classic</td>
+              <td><a href="#" target="_blank" rel="noopener">State Speedway</a></td>
+              <td>Columbus, IN</td>
+              <td>Night race</td>
+            </tr>
+            <tr>
+              <td>May 24, 2026</td>
+              <td>River City Showdown</td>
+              <td><a href="#" target="_blank" rel="noopener">River City Raceway</a></td>
+              <td>Evansville, IN</td>
+              <td>Double-header weekend</td>
+            </tr>
+            <tr>
+              <td>Jun 14, 2026</td>
+              <td>Summit Nationals</td>
+              <td><a href="#" target="_blank" rel="noopener">Summit Motorsports Park</a></td>
+              <td>Norwalk, OH</td>
+              <td>Qualifying Saturday</td>
+            </tr>
+            <tr>
+              <td>Jul 19, 2026</td>
+              <td>Heartland 200</td>
+              <td><a href="#" target="_blank" rel="noopener">Heartland Raceway</a></td>
+              <td>Terre Haute, IN</td>
+              <td>Endurance setup</td>
+            </tr>
+            <tr>
+              <td>Aug 23, 2026</td>
+              <td>Back-to-School Bash</td>
+              <td><a href="#" target="_blank" rel="noopener">Purdue Motorsports Park</a></td>
+              <td>West Lafayette, IN</td>
+              <td>Community event</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="center gap">
+        <a class="btn" href="index.html#contact">Request media/partner deck</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Carson Bowers Racing. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <a href="index.html#about">About</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="index.html#partners">Partners</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
