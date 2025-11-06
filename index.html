@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carson Bowers Racing</title>
+  <meta name="description" content="Official website of Carson Bowers Racing — news, results, partners, and contact." />
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="preload" as="image" href="assets/img/hero.jpg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Carson Bowers Racing" />
+  <meta property="og:description" content="Follow Carson Bowers on and off the track — schedule, results, partners, and more." />
+  <meta property="og:image" content="assets/img/hero.jpg" />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <!-- Header / Nav: simple, accessible, sticky -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="assets/img/favicon.png" alt="CB" class="brand-mark" />
+        <span class="brand-name">Carson Bowers Racing</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero: uses a background image for impact; text kept short for readability -->
+  <section class="hero" role="banner">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <h1><span class="accent">Carson Bowers</span> Racing</h1>
+      <p>Speed. Precision. Consistency. Follow the journey, see the schedule, and meet the partners that make it possible.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="schedule.html">View Race Schedule</a>
+        <a class="btn ghost" href="#partners">Meet the Partners</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About section: original copy; do not copy from any other driver site -->
+  <section id="about" class="section">
+    <div class="container grid two">
+      <div>
+        <h2>About Carson</h2>
+        <p>Carson Bowers is an emerging talent known for disciplined race craft and data-driven preparation. From local short tracks to regional showcases, Carson’s approach blends mechanical sympathy with relentless pace.</p>
+        <ul class="ticks">
+          <li>Race craft built on telemetry review and consistency</li>
+          <li>Community-focused — appearances, youth STEM & safety demos</li>
+          <li>Partner-first mindset with measurable ROI deliverables</li>
+        </ul>
+        <a class="btn" href="#contact">Partner with Carson</a>
+      </div>
+      <div>
+        <figure class="card photo">
+          <img src="assets/img/carson-portrait.jpg" alt="Carson Bowers portrait with race car" />
+          <figcaption>Carson Bowers — focus, feedback, forward.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results: simple cards; replace sample data with real results -->
+  <section id="results" class="section alt">
+    <div class="container">
+      <h2>Recent Results</h2>
+      <div class="grid three results-grid">
+        <!-- RESULT CARD TEMPLATE: duplicate and edit -->
+        <article class="card">
+          <h3>Midwest Short Track — Feature</h3>
+          <p class="muted">P2 • Fastest lap: 13.42s • +0.6% tire wear delta</p>
+          <p>Strong long-run pace, undercut on the final restart. Notes: aero balance improved with 2 turns RF.</p>
+        </article>
+        <article class="card">
+          <h3>State Speedway — Heat 1</h3>
+          <p class="muted">P1 • Green-to-checker</p>
+          <p>Clean air pace validated setup changes. Brake migration adjusted +2 clicks forward for entry stability.</p>
+        </article>
+        <article class="card">
+          <h3>River City — Feature</h3>
+          <p class="muted">P4 • +2 positions gained</p>
+          <p>Conservative tire strategy; late caution compressed field. Focus: exit traction off T2.</p>
+        </article>
+      </div>
+      <div class="center gap">
+        <a class="btn" href="schedule.html">See full schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners / Sponsors: responsive logo grid -->
+  <section id="partners" class="section">
+    <div class="container">
+      <h2>Partners</h2>
+      <p class="muted">A winning program powered by forward-thinking brands.</p>
+      <div class="logo-grid">
+        <!-- Replace with partner logos in assets/img/partner-*.png -->
+        <img src="assets/img/partner-1.png" alt="Partner 1" />
+        <img src="assets/img/partner-2.png" alt="Partner 2" />
+        <img src="assets/img/partner-3.png" alt="Partner 3" />
+        <img src="assets/img/partner-4.png" alt="Partner 4" />
+        <img src="assets/img/partner-5.png" alt="Partner 5" />
+        <img src="assets/img/partner-6.png" alt="Partner 6" />
+      </div>
+      <div class="center gap">
+        <a class="btn ghost" href="#contact">Become a partner</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact: simple form that posts to mailto by default; swap for Formspree or serverless later -->
+  <section id="contact" class="section alt">
+    <div class="container grid two">
+      <div>
+        <h2>Contact</h2>
+        <p>Media inquiries, partnerships, and appearances. For quick replies, include event dates and goals.</p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:team@carsonbowersracing.com">team@carsonbowersracing.com</a></li>
+          <li><strong>Instagram:</strong> <a href="#" rel="noopener">@carsonbowersracing</a></li>
+          <li><strong>X (Twitter):</strong> <a href="#" rel="noopener">@carsonbowers</a></li>
+        </ul>
+      </div>
+      <form class="card form" action="mailto:team@carsonbowersracing.com" method="post" enctype="text/plain">
+        <label>
+          <span>Name</span>
+          <input required name="name" type="text" placeholder="Your name" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input required name="email" type="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea required name="message" rows="5" placeholder="Tell us about your event or partnership idea"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Carson Bowers Racing. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
